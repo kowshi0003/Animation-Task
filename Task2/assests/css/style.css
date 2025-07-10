@@ -1,0 +1,110 @@
+ /* *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        image{
+            width: 320px;
+            height: 200px;
+            position: absolute;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .container{
+            width: 350px;
+            height: 400px;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+        }
+        img:nth-child(1){
+            animation: img1 5s linear  infinite;
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+        }
+        img:nth-child(2){
+            animation: img2 5s linear 10s infinite;
+            width: 100vw;
+            height: 100vh;
+             position: absolute;
+    
+        }
+        img:nth-child(3){
+            animation: img3 20s linear 30s infinite;
+            width: 100vw;
+            height: 100vh;
+             position: absolute;
+    
+        }
+        @keyframes img1{
+            0%{transform: translateX(0);}
+            100%{transform: translateX(-100%);}
+        }
+        @keyframes img2{
+            0%{transform: translateX(100);}
+            100%{transform: translateX(-100%);}
+        }
+         @keyframes img3{
+            0%{transform: translateX(0);}
+            100%{transform: translateX(-100%);}
+        }  */
+
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.container img {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Keyframe animations for moving images horizontally */
+@keyframes img1 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes img2 {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes img3 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Animation assignments for images */
+.container img:nth-child(1) {
+    animation: img1 4s linear 0s infinite;
+    z-index: 3;
+}
+
+.container img:nth-child(2) {
+    animation: img2 4s linear  infinite;
+    animation-delay: 8s;
+    z-index: 2;
+}
+
+.container img:nth-child(3) {
+    animation: img3 9s linear infinite;
+    animation-delay: 10s;
+    z-index: 1;
+}
